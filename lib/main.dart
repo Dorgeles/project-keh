@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:keh/screens/home.screen/home.screen.dart';
+import 'package:keh/screens/splash.screen.dart';
 
 Future<void> main() async {
   runApp(
@@ -15,10 +17,9 @@ class MyApp extends StatelessWidget {
       title: "Kéh",
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: Center(
-          child: Text('Nous commençons maintenant'),
-        ),
+        body: HomeScrceen(),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
