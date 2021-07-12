@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:keh/screens/home.screen/home.screen.dart';
-import 'package:keh/screens/splash.screen.dart';
 
 Future<void> main() async {
   runApp(
