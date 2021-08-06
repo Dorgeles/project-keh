@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keh/components/background.dart';
+import 'package:keh/components/buttons/cart-item.component.dart';
+import 'package:keh/components/buttons/edit-item.component.dart';
 import 'package:keh/components/theme.component.dart';
+import 'package:keh/screens/brobrolis-screen/brobros.screen.dart';
 
 class HomeScrceen extends StatelessWidget {
   const HomeScrceen({Key? key}) : super(key: key);
@@ -55,207 +58,171 @@ class HomeScrceen extends StatelessWidget {
                 children: [
                   Positioned(
                     right: 0,
-                    child: Container(
-                      // height: 200,
-                      width: size.width > 800
-                          ? size.width / 2.2
-                          : size.width / 2.4,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          bottomLeft: Radius.circular(30),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BrobrolisScreen(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: size.width > 800
+                            ? size.width / 2.2
+                            : size.width / 2.4,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            bottomLeft: Radius.circular(30),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
+                            ),
+                          ],
+                          color: Colors.white,
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                        ],
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            'Les Brobrolis',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            height: 120,
-                            width: 120,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image:
-                                        AssetImage("assets/logo-brobro.jpg"))),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                        ],
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'Les Brobrolis',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              height: 120,
+                              width: 120,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/logo-brobro.jpg"))),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Positioned(
                     top: 160,
                     right: 0,
-                    child: Container(
-                      // height: 200,
-                      width: size.width > 800
-                          ? size.width / 1.8
-                          : size.width / 2.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          bottomLeft: Radius.circular(30),
+                    child: GestureDetector(
+                      child: Container(
+                        // height: 200,
+                        width: size.width > 800
+                            ? size.width / 1.8
+                            : size.width / 2.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            bottomLeft: Radius.circular(30),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
+                            ),
+                          ],
+                          color: Colors.white,
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                        ],
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            'Les Boutiques',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            height: 120,
-                            width: 120,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        "assets/logo-boutique.jpg"))),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                        ],
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'Les Boutiques',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              height: 120,
+                              width: 120,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/logo-boutique.jpg"))),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Positioned(
                     top: 320,
                     right: 0,
-                    child: Container(
-                      // height: 200,
-                      width: size.width > 800
-                          ? size.width / 1.4
-                          : size.width / 1.7,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          bottomLeft: Radius.circular(30),
+                    child: GestureDetector(
+                      child: Container(
+                        // height: 200,
+                        width: size.width > 800
+                            ? size.width / 1.4
+                            : size.width / 1.7,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            bottomLeft: Radius.circular(30),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
+                            ),
+                          ],
+                          color: Colors.white,
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                        ],
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            'Les Livraisons',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            height: 120,
-                            width: 120,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        "assets/logo-livraison.jpg"))),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                        ],
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'Les Livraisons',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              height: 120,
+                              width: 120,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/logo-livraison.jpg"))),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: Container(
-                      height: 80,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        color: white,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(70),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Icon(
-                            FontAwesomeIcons.cartPlus,
-                            size: 30,
-                            color: Colors.grey[700],
-                          ),
-                          SizedBox(
-                            width: 15,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    child: Container(
-                      height: 80,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        color: white,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(70),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Icon(
-                            FontAwesomeIcons.userCog,
-                            size: 30,
-                            color: Colors.grey[700],
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
+                  EditProfilWidget(),
+                  CartItemWidget()
                 ],
               ))
             ],
