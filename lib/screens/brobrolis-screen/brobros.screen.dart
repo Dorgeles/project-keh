@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keh/components/background.dart';
+import 'package:keh/components/icon-arrow-back.component.dart';
 import 'package:keh/components/theme.component.dart';
 
 import 'component/brobrolis-search-bar.component.dart';
+import 'component/item-widget.component.dart';
 
 class BrobrolisScreen extends StatefulWidget {
   const BrobrolisScreen({Key? key}) : super(key: key);
@@ -24,15 +26,7 @@ class _BrobrolisScreenState extends State<BrobrolisScreen> {
           appBar: AppBar(
             elevation: 0,
             backgroundColor: white,
-            leading: IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios_new,
-                color: secondary,
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+            leading: IconArrowBack(),
             title: Text(
               'Les Brobrolis',
               style: TextStyle(color: secondary),
@@ -81,86 +75,21 @@ class _BrobrolisScreenState extends State<BrobrolisScreen> {
               SizedBox(
                 height: 10,
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(
-                  children: [
-                    Container(
-                      color: white,
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 5, horizontal: 15),
-                            child: Container(
-                              height: 120,
-                              width: 140,
-                              color: dark,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    width: size.width / 2.35,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text("le nom de l'article",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: secondary)),
-                                        Text(
-                                          "le nom de l'article",
-                                          style: TextStyle(
-                                              color: primary, fontSize: 8),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.arrow_forward,
-                                      color: secondary,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: 100,
-                                  ),
-                                  Text(
-                                    "60 000 Fcfa",
-                                    style: TextStyle(
-                                      color: primary,
-                                    ),
-                                  ),
-                                  Container(
-                                      child: Icon(
-                                    Icons.add_circle,
-                                    color: primary,
-                                  ))
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
+              Expanded(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    children: [
+                      ItemWidget(
+                        size: size,
                       ),
-                    )
-                  ],
+                      ItemWidget(size: size),
+                      ItemWidget(size: size),
+                      ItemWidget(size: size),
+                      ItemWidget(size: size),
+                      ItemWidget(size: size),
+                    ],
+                  ),
                 ),
               )
             ],
