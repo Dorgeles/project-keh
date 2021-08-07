@@ -159,7 +159,8 @@ class _DetailItemState extends State<DetailItem> {
                       padding: const EdgeInsets.all(12.0),
                       child: Text(
                         value.toString(),
-                        style: TextStyle(fontSize: 14),
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.bold),
                       ),
                     ),
                     GestureDetector(
