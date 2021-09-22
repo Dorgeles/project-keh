@@ -25,7 +25,7 @@ class _EditProfilScreenState extends State<EditProfilScreen> {
             Container(
               height: size.height / 10,
               width: size.width - 10,
-              decoration: BoxDecoration(color: primary),
+              decoration: BoxDecoration(color: white),
               child: Row(
                 children: [
                   ContainerImage(size: 85),
@@ -34,9 +34,25 @@ class _EditProfilScreenState extends State<EditProfilScreen> {
                   ),
                   Container(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: Text(
+                            "Le nom de l'utilisateur",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Text(
-                          "Le nom de l'utilisateur",
+                          "Le Brobro name",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
                         )
                       ],
                     ),
